@@ -7,6 +7,516 @@ class User
     private $email;
     private $password;
     private $role;
+    
+    public $countries = array(
+        'AF' =>'Afghanistan',
+        'AL' =>'Albania',
+        'DZ' =>'Algeria',
+        'AS' =>'American Samoa',
+        'AD' =>'Andorra',
+        'AO' =>'Angola',
+        'AI' =>'Anguilla',
+        'AQ' =>'Antarctica',
+        'AG' =>'Antigua and Barbuda',
+        'AR' =>'Argentina',
+        'AM' =>'Armenia',
+        'AW' =>'Aruba',
+        'AU' =>'Australia',
+        'AT' =>'Austria',
+        'AZ' =>'Azerbaijan',
+        'BS' =>'Bahamas',
+        'BH' =>'Bahrain',
+        'BD' =>'Bangladesh',
+        'BB' =>'Barbados',
+        'BY' =>'Belarus',
+        'BE' =>'Belgium',
+        'BZ' =>'Belize',
+        'BJ' =>'Benin',
+        'BM' =>'Bermuda',
+        'BT' =>'Bhutan',
+        'BO' =>'Bolivia',
+        'BA' =>'Bosnia and Herzegovina',
+        'BW' =>'Botswana',
+        'BV' =>'Bouvet Island',
+        'BR' =>'Brazil',
+        'BQ' =>'British Antarctic Territory',
+        'IO' =>'British Indian Ocean Territory',
+        'VG' =>'British Virgin Islands',
+        'BN' =>'Brunei',
+        'BG' =>'Bulgaria',
+        'BF' =>'Burkina Faso',
+        'BI' =>'Burundi',
+        'KH' =>'Cambodia',
+        'CM' =>'Cameroon',
+        'CA' =>'Canada',
+        'CT' =>'Canton and Enderbury Islands',
+        'CV' =>'Cape Verde',
+        'KY' =>'Cayman Islands',
+        'CF' =>'Central African Republic',
+        'TD' =>'Chad',
+        'CL' =>'Chile',
+        'CN' =>'China',
+        'CX' =>'Christmas Island',
+        'CC' =>'Cocos [Keeling] Islands',
+        'CO' =>'Colombia',
+        'KM' =>'Comoros',
+        'CG' =>'Congo - Brazzaville',
+        'CD' =>'Congo - Kinshasa',
+        'CK' =>'Cook Islands',
+        'CR' =>'Costa Rica',
+        'HR' =>'Croatia',
+        'CU' =>'Cuba',
+        'CY' =>'Cyprus',
+        'CZ' =>'Czech Republic',
+        'CI' =>'Côte d’Ivoire',
+        'DK' =>'Denmark',
+        'DJ' =>'Djibouti',
+        'DM' =>'Dominica',
+        'DO' =>'Dominican Republic',
+        'NQ' =>'Dronning Maud Land',
+        'DD' =>'East Germany',
+        'EC' =>'Ecuador',
+        'EG' =>'Egypt',
+        'SV' =>'El Salvador',
+        'GQ' =>'Equatorial Guinea',
+        'ER' =>'Eritrea',
+        'EE' =>'Estonia',
+        'ET' =>'Ethiopia',
+        'FK' =>'Falkland Islands',
+        'FO' =>'Faroe Islands',
+        'FJ' =>'Fiji',
+        'FI' =>'Finland',
+        'FR' =>'France',
+        'GF' =>'French Guiana',
+        'PF' =>'French Polynesia',
+        'TF' =>'French Southern Territories',
+        'FQ' =>'French Southern and Antarctic Territories',
+        'GA' =>'Gabon',
+        'GM' =>'Gambia',
+        'GE' =>'Georgia',
+        'DE' =>'Germany',
+        'GH' =>'Ghana',
+        'GI' =>'Gibraltar',
+        'GR' =>'Greece',
+        'GL' =>'Greenland',
+        'GD' =>'Grenada',
+        'GP' =>'Guadeloupe',
+        'GU' =>'Guam',
+        'GT' =>'Guatemala',
+        'GG' =>'Guernsey',
+        'GN' =>'Guinea',
+        'GW' =>'Guinea-Bissau',
+        'GY' =>'Guyana',
+        'HT' =>'Haiti',
+        'HM' =>'Heard Island and McDonald Islands',
+        'HN' =>'Honduras',
+        'HK' =>'Hong Kong SAR China',
+        'HU' =>'Hungary',
+        'IS' =>'Iceland',
+        'IN' =>'India',
+        'ID' =>'Indonesia',
+        'IR' =>'Iran',
+        'IQ' =>'Iraq',
+        'IE' =>'Ireland',
+        'IM' =>'Isle of Man',
+        'IL' =>'Israel',
+        'IT' =>'Italy',
+        'JM' =>'Jamaica',
+        'JP' =>'Japan',
+        'JE' =>'Jersey',
+        'JT' =>'Johnston Island',
+        'JO' =>'Jordan',
+        'KZ' =>'Kazakhstan',
+        'KE' =>'Kenya',
+        'KI' =>'Kiribati',
+        'KW' =>'Kuwait',
+        'KG' =>'Kyrgyzstan',
+        'LA' =>'Laos',
+        'LV' =>'Latvia',
+        'LB' =>'Lebanon',
+        'LS' =>'Lesotho',
+        'LR' =>'Liberia',
+        'LY' =>'Libya',
+        'LI' =>'Liechtenstein',
+        'LT' =>'Lithuania',
+        'LU' =>'Luxembourg',
+        'MO' =>'Macau SAR China',
+        'MK' =>'Macedonia',
+        'MG' =>'Madagascar',
+        'MW' =>'Malawi',
+        'MY' =>'Malaysia',
+        'MV' =>'Maldives',
+        'ML' =>'Mali',
+        'MT' =>'Malta',
+        'MH' =>'Marshall Islands',
+        'MQ' =>'Martinique',
+        'MR' =>'Mauritania',
+        'MU' =>'Mauritius',
+        'YT' =>'Mayotte',
+        'FX' =>'Metropolitan France',
+        'MX' =>'Mexico',
+        'FM' =>'Micronesia',
+        'MI' =>'Midway Islands',
+        'MD' =>'Moldova',
+        'MC' =>'Monaco',
+        'MN' =>'Mongolia',
+        'ME' =>'Montenegro',
+        'MS' =>'Montserrat',
+        'MA' =>'Morocco',
+        'MZ' =>'Mozambique',
+        'MM' =>'Myanmar [Burma]',
+        'NA' =>'Namibia',
+        'NR' =>'Nauru',
+        'NP' =>'Nepal',
+        'NL' =>'Netherlands',
+        'AN' =>'Netherlands Antilles',
+        'NT' =>'Neutral Zone',
+        'NC' =>'New Caledonia',
+        'NZ' =>'New Zealand',
+        'NI' =>'Nicaragua',
+        'NE' =>'Niger',
+        'NG' =>'Nigeria',
+        'NU' =>'Niue',
+        'NF' =>'Norfolk Island',
+        'KP' =>'North Korea',
+        'VD' =>'North Vietnam',
+        'MP' =>'Northern Mariana Islands',
+        'NO' =>'Norway',
+        'OM' =>'Oman',
+        'PC' =>'Pacific Islands Trust Territory',
+        'PK' =>'Pakistan',
+        'PW' =>'Palau',
+        'PS' =>'Palestinian Territories',
+        'PA' =>'Panama',
+        'PZ' =>'Panama Canal Zone',
+        'PG' =>'Papua New Guinea',
+        'PY' =>'Paraguay',
+        'YD' =>'People\'s Democratic Republic of Yemen',
+        'PE' =>'Peru',
+        'PH' =>'Philippines',
+        'PN' =>'Pitcairn Islands',
+        'PL' =>'Poland',
+        'PT' =>'Portugal',
+        'PR' =>'Puerto Rico',
+        'QA' =>'Qatar',
+        'RO' =>'Romania',
+        'RU' =>'Russia',
+        'RW' =>'Rwanda',
+        'BL' =>'Saint Barthélemy',
+        'SH' =>'Saint Helena',
+        'KN' =>'Saint Kitts and Nevis',
+        'LC' =>'Saint Lucia',
+        'MF' =>'Saint Martin',
+        'PM' =>'Saint Pierre and Miquelon',
+        'VC' =>'Saint Vincent and the Grenadines',
+        'WS' =>'Samoa',
+        'SM' =>'San Marino',
+        'SA' =>'Saudi Arabia',
+        'SN' =>'Senegal',
+        'RS' =>'Serbia',
+        'CS' =>'Serbia and Montenegro',
+        'SC' =>'Seychelles',
+        'SL' =>'Sierra Leone',
+        'SG' =>'Singapore',
+        'SK' =>'Slovakia',
+        'SI' =>'Slovenia',
+        'SB' =>'Solomon Islands',
+        'SO' =>'Somalia',
+        'ZA' =>'South Africa',
+        'GS' =>'South Georgia and the South Sandwich Islands',
+        'KR' =>'South Korea',
+        'ES' =>'Spain',
+        'LK' =>'Sri Lanka',
+        'SD' =>'Sudan',
+        'SR' =>'Suriname',
+        'SJ' =>'Svalbard and Jan Mayen',
+        'SZ' =>'Swaziland',
+        'SE' =>'Sweden',
+        'CH' =>'Switzerland',
+        'SY' =>'Syria',
+        'ST' =>'São Tomé and Príncipe',
+        'TW' =>'Taiwan',
+        'TJ' =>'Tajikistan',
+        'TZ' =>'Tanzania',
+        'TH' =>'Thailand',
+        'TL' =>'Timor-Leste',
+        'TG' =>'Togo',
+        'TK' =>'Tokelau',
+        'TO' =>'Tonga',
+        'TT' =>'Trinidad and Tobago',
+        'TN' =>'Tunisia',
+        'TR' =>'Turkey',
+        'TM' =>'Turkmenistan',
+        'TC' =>'Turks and Caicos Islands',
+        'TV' =>'Tuvalu',
+        'UM' =>'U.S. Minor Outlying Islands',
+        'PU' =>'U.S. Miscellaneous Pacific Islands',
+        'VI' =>'U.S. Virgin Islands',
+        'UG' =>'Uganda',
+        'UA' =>'Ukraine',
+        'SU' =>'Union of Soviet Socialist Republics',
+        'AE' =>'United Arab Emirates',
+        'GB' =>'United Kingdom',
+        'US' =>'United States',
+        'ZZ' =>'Unknown or Invalid Region',
+        'UY' =>'Uruguay',
+        'UZ' =>'Uzbekistan',
+        'VU' =>'Vanuatu',
+        'VA' =>'Vatican City',
+        'VE' =>'Venezuela',
+        'VN' =>'Vietnam',
+        'WK' =>'Wake Island',
+        'WF' =>'Wallis and Futuna',
+        'EH' =>'Western Sahara',
+        'YE' =>'Yemen',
+        'ZM' =>'Zambia',
+        'ZW' =>'Zimbabwe',
+        'AX' =>'Åland Islands',
+    );
+
+    public $categories = array(
+        'Accounting',
+        'Advertising',
+        'Marketing',
+        'Finance',
+        'Banking',
+        'Business',
+        'Business Appointments',
+        'Business Management',
+        'Business Travel',
+        'Travel',
+        'Female Specific',
+        'Male Specific',
+        'Careers',
+        'Consumer Issues',
+        'Economics',
+        'Entrepreneurship',
+        'Equity - Private & Public',
+        'Franchising',
+        'Heavy Duty Transport & Cranes',
+        'Innovation & Startup Policy',
+        'Insurance',
+        'Media & PR Trade',
+        'Mining & Resources',
+        'Money & Personal Finance',
+        'Nonprofit',
+        'Charities',
+        'Fundraising',
+        'Politics',
+        'Government',
+        'Federal',
+        'Local',
+        'State',
+        'Property',
+        'Commercial',
+        'Residential',
+        'Search Engine Marketing Industry',
+        'Statistics',
+        'Superannuation',
+        'Workplace Relations',
+        'Biotechnology',
+        'Life Science',
+        'IT Analysts',
+        'IT Business',
+        'IT Reseller',
+        'Electronics',
+        'Chemistry',
+        'Games',
+        'Consoles',
+        'Mobile Phones',
+        'Smartphones',
+        'Computers',
+        'Consumer IT',
+        'Robotics & Automation',
+        'Environment & Climate Change',
+        'IT Programming',
+        'Mapping & Geospatial Industry',
+        'Mobile & Wireless',
+        'Science',
+        'Security',
+        'Solar Energy Industry',
+        'Technical Reviews',
+        'Telecommunications',
+        'Waste & Water Management',
+        'Arts',
+        'Cultures',
+        'Pop-cultures',
+        'Cultist',
+        'Books & Literatures',
+        'Celebrity',
+        'Influencer',
+        'Atlethe',
+        'Musician',
+        'Band',
+        'Pro Player',
+        'Brand Ambassador',
+        'Gossips',
+        'Socials',
+        'Entertainments',
+        'Movies',
+        'Musics',
+        'Performing Arts',
+        'Photography',
+        'Televisions',
+        'Reviews',
+        'Affairs',
+        'Feminism',
+        'General News',
+        'Investigative Reporting',
+        'Migration',
+        'National Security',
+        'Opinion',
+        'Social Media',
+        'Data Journalists',
+        'Society',
+        'Issues',
+        'Talkshows',
+        'Podcast',
+        'Urban Planning & Policy',
+        'Fitness',
+        'Wellbeing',
+        'GWPR',
+        'Health Informatics',
+        'Medicine',
+        'Health',
+        'Disability',
+        'Nursing',
+        'Pharmacy',
+        'Psychology',
+        'Psychotherapy',
+        'Veterinary',
+        'Yoga',
+        'Virus',
+        'Biohazard',
+        'Adventure',
+        'Outdoors',
+        'Spiritual',
+        'Lifestyle',
+        'Animals',
+        'Pets',
+        'Beauty & Personal Care',
+        'Skincare',
+        'Beer & Brewing',
+        'Brides',
+        'Caravans',
+        'Families',
+        'Parenting',
+        'Fashion',
+        'Cuisine',
+        'Bloggers',
+        'Vloggers',
+        'Gardening',
+        'History',
+        'Homes',
+        'Interiors',
+        'Magazine',
+        'Kids',
+        'Lifestyle',
+        'Luxury',
+        'Mens Interest',
+        'Regional',
+        'Tourism',
+        'Religion',
+        'Wine & Liquor',
+        'Womens Interest',
+        'Youth Culture',
+        'Athletics',
+        'Football',
+        'League',
+        'Basketball',
+        'Boating',
+        'Marine',
+        'Bowls',
+        'Boxing',
+        'Cricket',
+        'Cycling',
+        'Associations',
+        'Global',
+        'Equestrian',
+        'Golf',
+        'Guns',
+        'Hunting',
+        'Gymnastics',
+        'Hobbies',
+        'Crafts',
+        'Hockey',
+        'Horse Racing',
+        'Martial Arts',
+        'Motorbike',
+        'Motoring',
+        'Motorsports',
+        'Netball',
+        'Rugby',
+        'Skateboarding',
+        'Soccer',
+        'Softball',
+        'Sport',
+        'Swimming',
+        'Watersports',
+        'Tennis',
+        'Winter',
+        'Summer',
+        'Aged Care',
+        'Architecture',
+        'Design',
+        'Automotive',
+        'Trade',
+        'Aviation',
+        'Aerospace',
+        'Cosmetics',
+        'Hair',
+        'Broadcasting',
+        'Industry',
+        'Building',
+        'Construction',
+        'Civil Engineering',
+        'Cleaning',
+        'Crime',
+        'Police',
+        'Courts',
+        'Defence',
+        'Army',
+        'Digital',
+        'Graphics',
+        'Education',
+        'Engineering',
+        'Exports',
+        'Supply Chain',
+        'Fashion',
+        'Apparel',
+        'Fire Prevention',
+        'Hotels',
+        'Clubs',
+        'Hospitality',
+        'Human Resources',
+        'Professionals',
+        'Infrastructure',
+        'Law',
+        'Manufacturing',
+        'Meetings',
+        'Shows',
+        'Obituaries',
+        'Funerals',
+        'Occupational Health',
+        'Safety',
+        'Polymers',
+        'Plastics',
+        'Printing',
+        'Publishing',
+        'Retail',
+        'Rural',
+        'Agriculture',
+        'Swimming Pools',
+        'Spas',
+        'Timber',
+        'Training',
+        'Truck',
+        'Bus',
+        'Rail',
+        'Heavy Machinery',
+        'Risk',
+        'Compliance',
+    );
 
     public function construct($username, $email, $password, $role)
     {
@@ -648,281 +1158,14 @@ class UserFeedManager
         echo "Notification sent to user $userId: New article published - {$article['title']}\n";
     }
 
-    public function getCountries()
+    public function getCountries($countries)
     {
-
-        $countries = array(
-            'AF' =>'Afghanistan',
-            'AL' =>'Albania',
-            'DZ' =>'Algeria',
-            'AS' =>'American Samoa',
-            'AD' =>'Andorra',
-            'AO' =>'Angola',
-            'AI' =>'Anguilla',
-            'AQ' =>'Antarctica',
-            'AG' =>'Antigua and Barbuda',
-            'AR' =>'Argentina',
-            'AM' =>'Armenia',
-            'AW' =>'Aruba',
-            'AU' =>'Australia',
-            'AT' =>'Austria',
-            'AZ' =>'Azerbaijan',
-            'BS' =>'Bahamas',
-            'BH' =>'Bahrain',
-            'BD' =>'Bangladesh',
-            'BB' =>'Barbados',
-            'BY' =>'Belarus',
-            'BE' =>'Belgium',
-            'BZ' =>'Belize',
-            'BJ' =>'Benin',
-            'BM' =>'Bermuda',
-            'BT' =>'Bhutan',
-            'BO' =>'Bolivia',
-            'BA' =>'Bosnia and Herzegovina',
-            'BW' =>'Botswana',
-            'BV' =>'Bouvet Island',
-            'BR' =>'Brazil',
-            'BQ' =>'British Antarctic Territory',
-            'IO' =>'British Indian Ocean Territory',
-            'VG' =>'British Virgin Islands',
-            'BN' =>'Brunei',
-            'BG' =>'Bulgaria',
-            'BF' =>'Burkina Faso',
-            'BI' =>'Burundi',
-            'KH' =>'Cambodia',
-            'CM' =>'Cameroon',
-            'CA' =>'Canada',
-            'CT' =>'Canton and Enderbury Islands',
-            'CV' =>'Cape Verde',
-            'KY' =>'Cayman Islands',
-            'CF' =>'Central African Republic',
-            'TD' =>'Chad',
-            'CL' =>'Chile',
-            'CN' =>'China',
-            'CX' =>'Christmas Island',
-            'CC' =>'Cocos [Keeling] Islands',
-            'CO' =>'Colombia',
-            'KM' =>'Comoros',
-            'CG' =>'Congo - Brazzaville',
-            'CD' =>'Congo - Kinshasa',
-            'CK' =>'Cook Islands',
-            'CR' =>'Costa Rica',
-            'HR' =>'Croatia',
-            'CU' =>'Cuba',
-            'CY' =>'Cyprus',
-            'CZ' =>'Czech Republic',
-            'CI' =>'Côte d’Ivoire',
-            'DK' =>'Denmark',
-            'DJ' =>'Djibouti',
-            'DM' =>'Dominica',
-            'DO' =>'Dominican Republic',
-            'NQ' =>'Dronning Maud Land',
-            'DD' =>'East Germany',
-            'EC' =>'Ecuador',
-            'EG' =>'Egypt',
-            'SV' =>'El Salvador',
-            'GQ' =>'Equatorial Guinea',
-            'ER' =>'Eritrea',
-            'EE' =>'Estonia',
-            'ET' =>'Ethiopia',
-            'FK' =>'Falkland Islands',
-            'FO' =>'Faroe Islands',
-            'FJ' =>'Fiji',
-            'FI' =>'Finland',
-            'FR' =>'France',
-            'GF' =>'French Guiana',
-            'PF' =>'French Polynesia',
-            'TF' =>'French Southern Territories',
-            'FQ' =>'French Southern and Antarctic Territories',
-            'GA' =>'Gabon',
-            'GM' =>'Gambia',
-            'GE' =>'Georgia',
-            'DE' =>'Germany',
-            'GH' =>'Ghana',
-            'GI' =>'Gibraltar',
-            'GR' =>'Greece',
-            'GL' =>'Greenland',
-            'GD' =>'Grenada',
-            'GP' =>'Guadeloupe',
-            'GU' =>'Guam',
-            'GT' =>'Guatemala',
-            'GG' =>'Guernsey',
-            'GN' =>'Guinea',
-            'GW' =>'Guinea-Bissau',
-            'GY' =>'Guyana',
-            'HT' =>'Haiti',
-            'HM' =>'Heard Island and McDonald Islands',
-            'HN' =>'Honduras',
-            'HK' =>'Hong Kong SAR China',
-            'HU' =>'Hungary',
-            'IS' =>'Iceland',
-            'IN' =>'India',
-            'ID' =>'Indonesia',
-            'IR' =>'Iran',
-            'IQ' =>'Iraq',
-            'IE' =>'Ireland',
-            'IM' =>'Isle of Man',
-            'IL' =>'Israel',
-            'IT' =>'Italy',
-            'JM' =>'Jamaica',
-            'JP' =>'Japan',
-            'JE' =>'Jersey',
-            'JT' =>'Johnston Island',
-            'JO' =>'Jordan',
-            'KZ' =>'Kazakhstan',
-            'KE' =>'Kenya',
-            'KI' =>'Kiribati',
-            'KW' =>'Kuwait',
-            'KG' =>'Kyrgyzstan',
-            'LA' =>'Laos',
-            'LV' =>'Latvia',
-            'LB' =>'Lebanon',
-            'LS' =>'Lesotho',
-            'LR' =>'Liberia',
-            'LY' =>'Libya',
-            'LI' =>'Liechtenstein',
-            'LT' =>'Lithuania',
-            'LU' =>'Luxembourg',
-            'MO' =>'Macau SAR China',
-            'MK' =>'Macedonia',
-            'MG' =>'Madagascar',
-            'MW' =>'Malawi',
-            'MY' =>'Malaysia',
-            'MV' =>'Maldives',
-            'ML' =>'Mali',
-            'MT' =>'Malta',
-            'MH' =>'Marshall Islands',
-            'MQ' =>'Martinique',
-            'MR' =>'Mauritania',
-            'MU' =>'Mauritius',
-            'YT' =>'Mayotte',
-            'FX' =>'Metropolitan France',
-            'MX' =>'Mexico',
-            'FM' =>'Micronesia',
-            'MI' =>'Midway Islands',
-            'MD' =>'Moldova',
-            'MC' =>'Monaco',
-            'MN' =>'Mongolia',
-            'ME' =>'Montenegro',
-            'MS' =>'Montserrat',
-            'MA' =>'Morocco',
-            'MZ' =>'Mozambique',
-            'MM' =>'Myanmar [Burma]',
-            'NA' =>'Namibia',
-            'NR' =>'Nauru',
-            'NP' =>'Nepal',
-            'NL' =>'Netherlands',
-            'AN' =>'Netherlands Antilles',
-            'NT' =>'Neutral Zone',
-            'NC' =>'New Caledonia',
-            'NZ' =>'New Zealand',
-            'NI' =>'Nicaragua',
-            'NE' =>'Niger',
-            'NG' =>'Nigeria',
-            'NU' =>'Niue',
-            'NF' =>'Norfolk Island',
-            'KP' =>'North Korea',
-            'VD' =>'North Vietnam',
-            'MP' =>'Northern Mariana Islands',
-            'NO' =>'Norway',
-            'OM' =>'Oman',
-            'PC' =>'Pacific Islands Trust Territory',
-            'PK' =>'Pakistan',
-            'PW' =>'Palau',
-            'PS' =>'Palestinian Territories',
-            'PA' =>'Panama',
-            'PZ' =>'Panama Canal Zone',
-            'PG' =>'Papua New Guinea',
-            'PY' =>'Paraguay',
-            'YD' =>'People\'s Democratic Republic of Yemen',
-            'PE' =>'Peru',
-            'PH' =>'Philippines',
-            'PN' =>'Pitcairn Islands',
-            'PL' =>'Poland',
-            'PT' =>'Portugal',
-            'PR' =>'Puerto Rico',
-            'QA' =>'Qatar',
-            'RO' =>'Romania',
-            'RU' =>'Russia',
-            'RW' =>'Rwanda',
-            'BL' =>'Saint Barthélemy',
-            'SH' =>'Saint Helena',
-            'KN' =>'Saint Kitts and Nevis',
-            'LC' =>'Saint Lucia',
-            'MF' =>'Saint Martin',
-            'PM' =>'Saint Pierre and Miquelon',
-            'VC' =>'Saint Vincent and the Grenadines',
-            'WS' =>'Samoa',
-            'SM' =>'San Marino',
-            'SA' =>'Saudi Arabia',
-            'SN' =>'Senegal',
-            'RS' =>'Serbia',
-            'CS' =>'Serbia and Montenegro',
-            'SC' =>'Seychelles',
-            'SL' =>'Sierra Leone',
-            'SG' =>'Singapore',
-            'SK' =>'Slovakia',
-            'SI' =>'Slovenia',
-            'SB' =>'Solomon Islands',
-            'SO' =>'Somalia',
-            'ZA' =>'South Africa',
-            'GS' =>'South Georgia and the South Sandwich Islands',
-            'KR' =>'South Korea',
-            'ES' =>'Spain',
-            'LK' =>'Sri Lanka',
-            'SD' =>'Sudan',
-            'SR' =>'Suriname',
-            'SJ' =>'Svalbard and Jan Mayen',
-            'SZ' =>'Swaziland',
-            'SE' =>'Sweden',
-            'CH' =>'Switzerland',
-            'SY' =>'Syria',
-            'ST' =>'São Tomé and Príncipe',
-            'TW' =>'Taiwan',
-            'TJ' =>'Tajikistan',
-            'TZ' =>'Tanzania',
-            'TH' =>'Thailand',
-            'TL' =>'Timor-Leste',
-            'TG' =>'Togo',
-            'TK' =>'Tokelau',
-            'TO' =>'Tonga',
-            'TT' =>'Trinidad and Tobago',
-            'TN' =>'Tunisia',
-            'TR' =>'Turkey',
-            'TM' =>'Turkmenistan',
-            'TC' =>'Turks and Caicos Islands',
-            'TV' =>'Tuvalu',
-            'UM' =>'U.S. Minor Outlying Islands',
-            'PU' =>'U.S. Miscellaneous Pacific Islands',
-            'VI' =>'U.S. Virgin Islands',
-            'UG' =>'Uganda',
-            'UA' =>'Ukraine',
-            'SU' =>'Union of Soviet Socialist Republics',
-            'AE' =>'United Arab Emirates',
-            'GB' =>'United Kingdom',
-            'US' =>'United States',
-            'ZZ' =>'Unknown or Invalid Region',
-            'UY' =>'Uruguay',
-            'UZ' =>'Uzbekistan',
-            'VU' =>'Vanuatu',
-            'VA' =>'Vatican City',
-            'VE' =>'Venezuela',
-            'VN' =>'Vietnam',
-            'WK' =>'Wake Island',
-            'WF' =>'Wallis and Futuna',
-            'EH' =>'Western Sahara',
-            'YE' =>'Yemen',
-            'ZM' =>'Zambia',
-            'ZW' =>'Zimbabwe',
-            'AX' =>'Åland Islands',
-        );
         
         /**
          * Filter the countries before returning
          *
          * @param array $countries countries array for filtering
-         */
-        $countries = countryFilters('example_countries_filters', $countries);
+         */        $countries = countryFilters($countries);
     
         /**
          * Return the translated and filtered countries
@@ -941,250 +1184,469 @@ class UserFeedManager
     		// always return countries!
     		return $countries;
     }
+
+    public function getCategories($categories)
+    {
+        
+        /**
+         * Filter the countries before returning
+         *
+         * @param array $countries countries array for filtering
+         */        $categories = categoriesFilters($categories);
+    
+        /**
+         * Return the translated and filtered countries
+         */
+        return $categories;
+    }
+
+    public function categoriesFilters($categories)
+    {
+    		// add a translatable category:
+    		$categories['XX'] = ('Category Name');
+    		// remove a category:
+    		unset($categories['YY']);
+    		// modify a category:
+    		$categories['1'] = ('Ads');
+    		// always return categories!
+    		return $categories;
+    }
 }
 
-//Dummy Data
-$countriesDummy=array(
-    "Afghanistan",
-    "Albania",
-    "Algeria",
-    "American Samoa",
-    "Andorra",
-    "Angola",
-    "Anguilla",
-    "Antarctica",
-    "Antigua and Barbuda",
-    "Argentina",
-    "Armenia",
-    "Aruba",
-    "Australia",
-    "Austria",
-    "Azerbaijan",
-    "Bahamas",
-    "Bahrain",
-    "Bangladesh",
-    "Barbados",
-    "Belarus",
-    "Belgium",
-    "Belize",
-    "Benin",
-    "Bermuda",
-    "Bhutan",
-    "Bolivia",
-    "Bosnia and Herzegowina",
-    "Botswana",
-    "Bouvet Island",
-    "Brazil",
-    "British Indian Ocean Territory",
-    "Brunei Darussalam",
-    "Bulgaria",
-    "Burkina Faso",
-    "Burundi",
-    "Cambodia",
-    "Cameroon",
-    "Canada",
-    "Cape Verde",
-    "Cayman Islands",
-    "Central African Republic",
-    "Chad",
-    "Chile",
-    "China",
-    "Christmas Island",
-    "Cocos (Keeling) Islands",
-    "Colombia",
-    "Comoros",
-    "Congo",
-    "Congo, the Democratic Republic of the",
-    "Cook Islands",
-    "Costa Rica",
-    "Cote d'Ivoire",
-    "Croatia (Hrvatska)",
-    "Cuba",
-    "Cyprus",
-    "Czech Republic",
-    "Denmark",
-    "Djibouti",
-    "Dominica",
-    "Dominican Republic",
-    "East Timor",
-    "Ecuador",
-    "Egypt",
-    "El Salvador",
-    "Equatorial Guinea",
-    "Eritrea",
-    "Estonia",
-    "Ethiopia",
-    "Falkland Islands (Malvinas)",
-    "Faroe Islands",
-    "Fiji",
-    "Finland",
-    "France",
-    "France Metropolitan",
-    "French Guiana",
-    "French Polynesia",
-    "French Southern Territories",
-    "Gabon",
-    "Gambia",
-    "Georgia",
-    "Germany",
-    "Ghana",
-    "Gibraltar",
-    "Greece",
-    "Greenland",
-    "Grenada",
-    "Guadeloupe",
-    "Guam",
-    "Guatemala",
-    "Guinea",
-    "Guinea-Bissau",
-    "Guyana",
-    "Haiti",
-    "Heard and Mc Donald Islands",
-    "Holy See (Vatican City State)",
-    "Honduras",
-    "Hong Kong",
-    "Hungary",
-    "Iceland",
-    "India",
-    "Indonesia",
-    "Iran (Islamic Republic of)",
-    "Iraq",
-    "Ireland",
-    "Israel",
-    "Italy",
-    "Jamaica",
-    "Japan",
-    "Jordan",
-    "Kazakhstan",
-    "Kenya",
-    "Kiribati",
-    "Korea, Democratic People's Republic of",
-    "Korea, Republic of",
-    "Kuwait",
-    "Kyrgyzstan",
-    "Lao, People's Democratic Republic",
-    "Latvia",
-    "Lebanon",
-    "Lesotho",
-    "Liberia",
-    "Libyan Arab Jamahiriya",
-    "Liechtenstein",
-    "Lithuania",
-    "Luxembourg",
-    "Macau",
-    "Macedonia, The Former Yugoslav Republic of",
-    "Madagascar",
-    "Malawi",
-    "Malaysia",
-    "Maldives",
-    "Mali",
-    "Malta",
-    "Marshall Islands",
-    "Martinique",
-    "Mauritania",
-    "Mauritius",
-    "Mayotte",
-    "Mexico",
-    "Micronesia, Federated States of",
-    "Moldova, Republic of",
-    "Monaco",
-    "Mongolia",
-    "Montserrat",
-    "Morocco",
-    "Mozambique",
-    "Myanmar",
-    "Namibia",
-    "Nauru",
-    "Nepal",
-    "Netherlands",
-    "Netherlands Antilles",
-    "New Caledonia",
-    "New Zealand",
-    "Nicaragua",
-    "Niger",
-    "Nigeria",
-    "Niue",
-    "Norfolk Island",
-    "Northern Mariana Islands",
-    "Norway",
-    "Oman",
-    "Pakistan",
-    "Palau",
-    "Panama",
-    "Papua New Guinea",
-    "Paraguay",
-    "Peru",
-    "Philippines",
-    "Pitcairn",
-    "Poland",
-    "Portugal",
-    "Puerto Rico",
-    "Qatar",
-    "Reunion",
-    "Romania",
-    "Russian Federation",
-    "Rwanda",
-    "Saint Kitts and Nevis",
-    "Saint Lucia",
-    "Saint Vincent and the Grenadines",
-    "Samoa",
-    "San Marino",
-    "Sao Tome and Principe",
-    "Saudi Arabia",
-    "Senegal",
-    "Seychelles",
-    "Sierra Leone",
-    "Singapore",
-    "Slovakia (Slovak Republic)",
-    "Slovenia",
-    "Solomon Islands",
-    "Somalia",
-    "South Africa",
-    "South Georgia and the South Sandwich Islands",
-    "Spain",
-    "Sri Lanka",
-    "St. Helena",
-    "St. Pierre and Miquelon",
-    "Sudan",
-    "Suriname",
-    "Svalbard and Jan Mayen Islands",
-    "Swaziland",
-    "Sweden",
-    "Switzerland",
-    "Syrian Arab Republic",
-    "Taiwan, Province of China",
-    "Tajikistan",
-    "Tanzania, United Republic of",
-    "Thailand",
-    "Togo",
-    "Tokelau",
-    "Tonga",
-    "Trinidad and Tobago",
-    "Tunisia",
-    "Turkey",
-    "Turkmenistan",
-    "Turks and Caicos Islands",
-    "Tuvalu",
-    "Uganda",
-    "Ukraine",
-    "United Arab Emirates",
-    "United Kingdom",
-    "United States",
-    "United States Minor Outlying Islands",
-    "Uruguay",
-    "Uzbekistan",
-    "Vanuatu",
-    "Venezuela",
-    "Vietnam",
-    "Virgin Islands (British)",
-    "Virgin Islands (U.S.)",
-    "Wallis and Futuna Islands",
-    "Western Sahara",
-    "Yemen",
-    "Yugoslavia",
-    "Zambia",
-    "Zimbabwe"
-);
+class SocialMediaIntegrationAPI
+{
+    private $facebookApiKey;
+    private $twitterApiKey;
+    private $linkedinApiKey;
+    public const ERROR_CONST = "Error: ";
+
+    public function __construct($facebookApiKey, $twitterApiKey, $linkedinApiKey)
+    {
+        $this->facebookApiKey = $facebookApiKey;
+        $this->twitterApiKey = $twitterApiKey;
+        $this->linkedinApiKey = $linkedinApiKey;
+    }
+
+    public function shareOnFacebook($articleTitle, $articleUrl)
+    {
+        $facebookApiUrl = "https://graph.facebook.com/v12.0/me/feed";
+
+        $postData = array(
+            "message" => $articleTitle,
+            "link" => $articleUrl,
+            "access_token" => $this->facebookApiKey
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $facebookApiUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($response === false) {
+            // Error occurred during the request
+            $error = curl_error($ch);
+            curl_close($ch);
+            // Handle the error
+            echo self::ERROR_CONST . $error;
+            return;
+        }
+
+        curl_close($ch);
+
+        $responseData = json_decode($response, true);
+
+        if ($httpCode >= 200 && $httpCode < 300 && isset($responseData['id'])) {
+            // Sharing was successful
+            echo "Article shared on Facebook successfully. Post ID: " . $responseData['id'];
+        } else {
+            // Error occurred during sharing
+            echo "Error sharing on Facebook. Response: " . $response;
+        }
+    }
+
+    public function shareOnTwitter($articleTitle, $articleUrl)
+    {
+        $twitterApiUrl = "https://api.twitter.com/1.1/statuses/update.json";
+
+        $postData = array(
+            "status" => $articleTitle . " " . $articleUrl,
+        );
+
+        $oauth = array(
+            "oauth_consumer_key" => $this->twitterApiKey,
+            "oauth_nonce" => time(),
+            "oauth_signature_method" => "HMAC-SHA1",
+            "oauth_timestamp" => time(),
+            "oauth_token" => "",
+            "oauth_version" => "1.0"
+        );
+
+        $baseString = $this->buildBaseString($twitterApiUrl, 'POST', $oauth);
+        $compositeKey = rawurlencode($this->twitterApiKey) . '&' . rawurlencode('');
+        $oauthSignature = base64_encode(hash_hmac('sha1', $baseString, $compositeKey, true));
+
+        $oauth['oauth_signature'] = $oauthSignature;
+
+        $header = array(
+            $this->buildAuthorizationHeader($oauth),
+            'Content-Type: application/x-www-form-urlencoded'
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $twitterApiUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($response === false) {
+            // Error occurred during the request
+            $error = curl_error($ch);
+            curl_close($ch);
+            // Handle the error
+            echo self::ERROR_CONST . $error;
+            return;
+        }
+
+        curl_close($ch);
+
+        $responseData = json_decode($response, true);
+
+        if ($httpCode >= 200 && $httpCode < 300 && isset($responseData['id'])) {
+            // Sharing was successful
+            echo "Article shared on Twitter successfully. Tweet ID: " . $responseData['id'];
+        } else {
+            // Error occurred during sharing
+            echo "Error sharing on Twitter. Response: " . $response;
+        }
+    }
+
+    public function shareOnLinkedIn($articleTitle, $articleUrl)
+    {
+        $linkedinApiUrl = "https://api.linkedin.com/v2/shares";
+
+        $postData = array(
+            "content" => array(
+                "title" => $articleTitle,
+                "submitted-url" => $articleUrl
+            ),
+            "visibility" => array(
+                "code" => "anyone"
+            )
+        );
+
+        $header = array(
+            "Content-Type: application/json",
+            "Authorization: Bearer " . $this->linkedinApiKey
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $linkedinApiUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($response === false) {
+            // Error occurred during the request
+            $error = curl_error($ch);
+            curl_close($ch);
+            // Handle the error
+            echo self::ERROR_CONST . $error;
+            return;
+        }
+
+        curl_close($ch);
+
+        $responseData = json_decode($response, true);
+
+        if ($httpCode >= 200 && $httpCode < 300 && isset($responseData['id'])) {
+            // Sharing was successful
+            echo "Article shared on LinkedIn successfully. Post ID: " . $responseData['id'];
+        } else {
+            // Error occurred during sharing
+            echo "Error sharing on LinkedIn. Response: " . $response;
+        }
+    }
+
+    public function sendLineMessage($userId, $message)
+    {
+        $lineApiUrl = "https://api.line.me/v2/bot/message/push";
+
+        $headers = array(
+            "Content-Type: application/json",
+            "Authorization: Bearer " . $this->lineChannelAccessToken
+        );
+
+        $postData = array(
+            "to" => $userId,
+            "messages" => array(
+                array(
+                    "type" => "text",
+                    "text" => $message
+                )
+            )
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $lineApiUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($response === false) {
+            // Error occurred during the request
+            $error = curl_error($ch);
+            curl_close($ch);
+            // Handle the error
+            echo self::ERROR_CONST . $error;
+            return;
+        }
+
+        curl_close($ch);
+
+        if ($httpCode === 200) {
+            // Message sent successfully
+            echo "Message sent to Line user $userId successfully.";
+        } else {
+            // Error occurred during message sending
+            echo "Error sending message to Line user $userId. Response: " . $response;
+        }
+    }
+
+    public function sendTelegramMessage($chatId, $message)
+    {
+        $telegramApiUrl = "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage";
+
+        $postData = array(
+            'chat_id' => $chatId,
+            'text' => $message
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $telegramApiUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+
+        if ($response === false) {
+            // Error occurred during the request
+            $error = curl_error($ch);
+            curl_close($ch);
+            // Handle the error
+            echo self::ERROR_CONST . $error;
+            return;
+        }
+
+        curl_close($ch);
+
+        $responseData = json_decode($response, true);
+
+        if ($responseData['ok'] === true) {
+            // Message sent successfully
+            echo "Message sent to Telegram user $chatId successfully.";
+        } else {
+            // Error occurred during message sending
+            echo "Error sending message to Telegram user $chatId. Description: " . $responseData['description'];
+        }
+    }
+
+    private function buildBaseString($baseURI, $method, $params)
+    {
+        $r = array();
+        ksort($params);
+
+        foreach ($params as $key => $value) {
+            $r[] = "$key=" . rawurlencode($value);
+        }
+
+        return $method . "&" . rawurlencode($baseURI) . '&' . rawurlencode(implode('&', $r));
+    }
+
+    private function buildAuthorizationHeader($oauth)
+    {
+        $r = 'Authorization: OAuth ';
+        $values = array();
+
+        foreach ($oauth as $key => $value) {
+            if (empty($value)) {
+                continue;
+            }
+            $values[] = "$key=\"" . rawurlencode($value) . "\"";
+        }
+
+        $r .= implode(', ', $values);
+
+        return $r;
+    }
+}
+
+// Product class representing a product entity
+class Product
+{
+    public $id;
+    public $name;
+    public $description;
+    public $price;
+    public $availability;
+
+    // Constructor
+    public function __construct($id, $name, $description, $price, $availability)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->description = $description;
+        $this->price = $price;
+        $this->availability = $availability;
+    }
+}
+
+// API class handling product management
+class ProductAPI
+{
+    private $products = array(); // Placeholder for products
+
+    // Endpoint to retrieve all products
+    public function getAllProducts()
+    {
+        return $this->products;
+    }
+
+    // Endpoint to retrieve a specific product by ID
+    public function getProductById($id)
+    {
+        foreach ($this->products as $product) {
+            if ($product->id == $id) {
+                return $product;
+            }
+        }
+        return null; // Product not found
+    }
+
+    // Endpoint to create a new product
+    public function createProduct($name, $description, $price, $availability)
+    {
+        $newProductId = count($this->products) + 1; // Generate new ID
+        $newProduct = new Product($newProductId, $name, $description, $price, $availability);
+        $this->products[] = $newProduct; // Add the new product to the array
+        return $newProduct;
+    }
+
+    // Endpoint to update an existing product
+    public function updateProduct($id, $name, $description, $price, $availability)
+    {
+        foreach ($this->products as $product) {
+            if ($product->id == $id) {
+                $product->name = $name;
+                $product->description = $description;
+                $product->price = $price;
+                $product->availability = $availability;
+                return $product;
+            }
+        }
+        return null; // Product not found
+    }
+
+    // Endpoint to delete a product
+    public function deleteProduct($id)
+    {
+        foreach ($this->products as $key => $product) {
+            if ($product->id == $id) {
+                unset($this->products[$key]); // Remove the product from the array
+                return true;
+            }
+        }
+        return false; // Product not found
+    }
+}
+
+// CartItem class representing an item in the shopping cart
+class CartItem
+{
+    public $id;
+    public $productId;
+    public $quantity;
+
+    // Constructor
+    public function __construct($id, $productId, $quantity)
+    {
+        $this->id = $id;
+        $this->productId = $productId;
+        $this->quantity = $quantity;
+    }
+}
+
+// API class handling shopping cart management
+class ShoppingCartAPI
+{
+    private $cartItems = array(); // Placeholder for cart items
+
+    // Endpoint to retrieve all cart items
+    public function getAllCartItems()
+    {
+        return $this->cartItems;
+    }
+
+    // Endpoint to retrieve a specific cart item by ID
+    public function getCartItemById($id)
+    {
+        foreach ($this->cartItems as $cartItem) {
+            if ($cartItem->id == $id) {
+                return $cartItem;
+            }
+        }
+        return null; // Cart item not found
+    }
+
+    // Endpoint to add a product to the shopping cart
+    public function addProductToCart($productId, $quantity)
+    {
+        $newCartItemId = count($this->cartItems) + 1; // Generate new ID
+        $newCartItem = new CartItem($newCartItemId, $productId, $quantity);
+        $this->cartItems[] = $newCartItem; // Add the new cart item to the array
+        return $newCartItem;
+    }
+
+    // Endpoint to update the quantity of a cart item
+    public function updateCartItemQuantity($id, $quantity)
+    {
+        foreach ($this->cartItems as $cartItem) {
+            if ($cartItem->id == $id) {
+                $cartItem->quantity = $quantity;
+                return $cartItem;
+            }
+        }
+        return null; // Cart item not found
+    }
+
+    // Endpoint to remove a cart item from the shopping cart
+    public function removeCartItem($id)
+    {
+        foreach ($this->cartItems as $key => $cartItem) {
+            if ($cartItem->id == $id) {
+                unset($this->cartItems[$key]); // Remove the cart item from the array
+                return true;
+            }
+        }
+        return false; // Cart item not found
+    }
+}
 
 // Usage Example
 $userDatabase = new UserDatabase();
@@ -1448,9 +1910,114 @@ foreach ($user2Feed as $article) {
 // Example usage of notifyUsers function
 $articleToNotify = [
     'title' => 'Breaking News',
-    'category' => 'Politics',
+    'category' => $categories['5'],
     'author' => 'John Smith',
-    'country' => $countriesDummy['13']
+    'country' => $countries['US']
 ];
 
 $userFeed->notifyUsers($articleToNotify);
+
+$facebookApiKey = "YOUR_FACEBOOK_API_KEY";
+$twitterApiKey = "YOUR_TWITTER_API_KEY";
+$linkedinApiKey = "YOUR_LINKEDIN_API_KEY";
+
+$apiSocmed = new SocialMediaIntegrationAPI($facebookApiKey, $twitterApiKey, $linkedinApiKey);
+
+$articleTitle = "Example News Article";
+$articleUrl = "https://www.example.com/news/article";
+
+// Share on Facebook
+$apiSocmed->shareOnFacebook($articleTitle, $articleUrl);
+
+// Share on Twitter
+$apiSocmed->shareOnTwitter($articleTitle, $articleUrl);
+
+// Share on LinkedIn
+$apiSocmed->shareOnLinkedIn($articleTitle, $articleUrl);
+
+// Share on Telegram
+$apiSocmed->sendTelegramMessage($chatId, $message);
+
+// Share on Line
+$apiSocmed->sendLineMessage($userId, $message);
+
+
+$apiProduct = new ProductAPI();
+
+// Create a new product
+$newProduct = $apiProduct->createProduct("Example Product", "This is an example product.", 9.99, true);
+echo "Created Product: " . json_encode($newProduct) . "\n";
+
+// Retrieve all products
+$allProducts = $apiProduct->getAllProducts();
+echo "All Products: " . json_encode($allProducts) . "\n";
+
+// Retrieve a product by ID
+$productId = 2;
+$product = $apiProduct->getProductById($productId);
+if ($product) {
+    echo "Product with ID $productId: " . json_encode($product) . "\n";
+} else {
+    echo "Product with ID $productId not found.\n";
+}
+
+// Update an existing product
+$productIdToUpdate = 3;
+$updatedProduct = $apiProduct->updateProduct(
+    $productIdToUpdate,
+    "Updated Product",
+    "This is an updated product.",
+    19.99,
+    false
+);
+if ($updatedProduct) {
+    echo "Updated Product: " . json_encode($updatedProduct) . "\n";
+} else {
+    echo "Product with ID $productIdToUpdate not found.\n";
+}
+
+// Delete a product
+$productIdToDelete = 1;
+$deleted = $apiProduct->deleteProduct($productIdToDelete);
+if ($deleted) {
+    echo "Product with ID $productIdToDelete deleted.\n";
+} else {
+    echo "Product with ID $productIdToDelete not found.\n";
+}
+
+$apiShoppingCart = new ShoppingCartAPI();
+
+// Add a product to the shopping cart
+$newCartItem = $apiShoppingCart->addProductToCart(1, 3);
+echo "Added Cart Item: " . json_encode($newCartItem) . "\n";
+
+// Retrieve all cart items
+$allCartItems = $apiShoppingCart->getAllCartItems();
+echo "All Cart Items: " . json_encode($allCartItems) . "\n";
+
+// Retrieve a cart item by ID
+$cartItemId = 2;
+$cartItem = $apiShoppingCart->getCartItemById($cartItemId);
+if ($cartItem) {
+    echo "Cart Item with ID $cartItemId: " . json_encode($cartItem) . "\n";
+} else {
+    echo "Cart Item with ID $cartItemId not found.\n";
+}
+
+// Update the quantity of a cart item
+$cartItemIdToUpdate = 3;
+$updatedCartItem = $apiShoppingCart->updateCartItemQuantity($cartItemIdToUpdate, 5);
+if ($updatedCartItem) {
+    echo "Updated Cart Item: " . json_encode($updatedCartItem) . "\n";
+} else {
+    echo "Cart Item with ID $cartItemIdToUpdate not found.\n";
+}
+
+// Remove a cart item from the shopping cart
+$cartItemIdToRemove = 1;
+$removed = $apiShoppingCart->removeCartItem($cartItemIdToRemove);
+if ($removed) {
+    echo "Cart Item with ID $cartItemIdToRemove removed.\n";
+} else {
+    echo "Cart Item with ID $cartItemIdToRemove not found.\n";
+}
